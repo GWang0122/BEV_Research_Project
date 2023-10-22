@@ -1,0 +1,8 @@
+#!/bin/bash
+#FILENAME: job.sub
+
+module load anaconda
+source /home/wang4772/.conda/envs/cent7/2020.11-py38/conda.sh
+conda activate tf_env
+
+python train_vqvae.py
