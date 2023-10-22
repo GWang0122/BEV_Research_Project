@@ -1,0 +1,17 @@
+#!/bin/bash
+#FILENAME: diffusion_job.sub
+
+#SBATCH -A standby
+#SBATCH --mem=256G
+#SBATCH --nodes=1
+#SBATCH --gres=gpu:2
+#SBATCH --ntasks-per-node=2
+#SBATCH --cpus-per-task=4
+#SBATCH --time=4:00:00
+#SBATCH --job-name=diffusion_train
+
+
+module load anaconda
+conda activate tf_env
+
+python train_diffusion.py
